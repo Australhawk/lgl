@@ -21,7 +21,7 @@ gem 'formtastic-bootstrap'													#FORMULARIOS
 # gem 'omniauth-openid'														#OPENID
 # gem 'resque'																#ASYNC
 # gem 'resque_mailer'															#MAIL-DELAYER
-gem 'rmagick'																#IMAGENES
+
 
 
 
@@ -30,6 +30,7 @@ group :development do
   gem 'sqlite3' 															#Database
 end
 group :production, :test do
+  gem 'rmagick'																#IMAGENES
   gem 'pg'
 end
 
