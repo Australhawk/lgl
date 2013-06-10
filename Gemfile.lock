@@ -112,7 +112,6 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
-    rmagick (2.13.2)
     ruby2ruby (2.0.5)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -160,7 +159,6 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.13)
-  rmagick
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
