@@ -15,10 +15,31 @@
   .btn-group
     %a.btn
       %i.icon-align-left
+      Izquierda
     %a.btn
       %i.icon-align-center
+      Centrar
     %a.btn
       %i.icon-align-right
+      Derecha
     %a.btn
       %i.icon-align-justify
+      Justificar
+  .btn-group
+    %a.btn
+      %i.icon-user
+      Usuario
+    %a.btn.dropdown-toggle{data: {:toggle=>"dropdown"}}
+      %span.caret
+    %ul.dropdown-menu
+      %li
+        %a{href: "#"}
+          %i.icon-pencil
+          Editar
+        %a{href: "#"}
+          %i.icon-trash
+          Borrar
+        %a{href: "#"}
+          %i.icon-ban-circle
+          Banear
 
