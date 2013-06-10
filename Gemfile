@@ -30,7 +30,7 @@ group :development do
   gem 'sqlite3' 															#Database
 end
 group :production, :test do
-  gem 'rmagick'																#IMAGENES
+ 
   gem 'pg'
 end
 
