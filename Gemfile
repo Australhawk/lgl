@@ -6,26 +6,26 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'haml-rails'															#HAML
-gem 'carrierwave'															#UPLOAD
-gem 'shoulda'																#TEST
+# gem 'carrierwave'															#UPLOAD
+# gem 'shoulda'																#TEST
 gem 'devise'																#LOGIN
-gem 'kaminari'																#PAGINATION
-gem 'factory_girl_rails'													#FIXTURES
-gem 'cancan'																#PERMISOS
-gem 'nokogiri'																#PARSER
-gem 'formtastic'															#FORMULARIOS
-gem 'omniauth-facebook'														#FACEBOOK
-gem 'omniauth-twitter'														#TWITTER
-gem 'omniauth-github'														#GITHUB
-gem 'omniauth-openid'														#OPENID
-gem 'resque'																#ASYNC
-gem 'resque_mailer'															#MAIL-DELAYER
+# gem 'kaminari'																#PAGINATION
+# gem 'factory_girl_rails'													#FIXTURES
+# gem 'cancan'																#PERMISOS
+# gem 'nokogiri'																#PARSER
+gem 'formtastic-bootstrap'													#FORMULARIOS
+# gem 'omniauth-facebook'														#FACEBOOK
+# gem 'omniauth-twitter'														#TWITTER
+# gem 'omniauth-github'														#GITHUB
+# gem 'omniauth-openid'														#OPENID
+# gem 'resque'																#ASYNC
+# gem 'resque_mailer'															#MAIL-DELAYER
 gem 'rmagick'																#IMAGENES
 
 
 
 group :development do
-  gem 'brakeman', :require => false
+  gem 'brakeman', :require => false											#Seguridad
   gem 'sqlite3' 															#Database
 end
 group :production, :test do

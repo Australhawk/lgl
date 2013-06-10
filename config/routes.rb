@@ -1,4 +1,7 @@
 LGL::Application.routes.draw do
+  get "raiz/index"
+  root :to => "raiz#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
