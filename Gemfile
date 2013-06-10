@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'haml-rails'															#HAML
+gem 'holder_rails'															#HOLDER
 # gem 'carrierwave'															#UPLOAD
 # gem 'shoulda'																#TEST
 gem 'devise'																#LOGIN
