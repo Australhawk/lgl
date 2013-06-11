@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @stream.title
+%p
+  %b Account:
+  = @stream.account
+%p
+  %b Image:
+  = @stream.image
+%p
+  %b Description:
+  = @stream.description
+
+= link_to 'Edit', edit_stream_path(@stream)
+\|
+= link_to 'Back', streams_path

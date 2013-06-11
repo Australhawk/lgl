@@ -1,17 +1,16 @@
-%h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Sign up"
+%h2 Se parte de Los Gorditos Loleros
+= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {class: "form-horizontal well"}) do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :first_name, :label => "Nombre"
+    = f.input :last_name, :label => "Apellido"
+    = f.input :profile_name, :label => "Nombre de Invocador"
+    = f.input :email, :label => "Correo Electronico"
+    = f.input :password, :label => "Contraseña"
+    = f.input :password_confirmation, :label => "Confirmar Contraseña"
+    
+  = f.actions do
+    = f.action :submit, :label => "Registrarse", :button_html => { :disable_with => 'Registrando...' }
+    = f.action :reset, :label => "Reiniciar"
+  
 = render "devise/shared/links"

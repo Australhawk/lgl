@@ -1,7 +1,16 @@
 LGL::Application.routes.draw do
+  devise_for :users
+
+  resources :streams
+
+
   get "raiz/index"
   root :to => "raiz#index"
-
+  devise_scope :user do
+    get "login", :to => "devise/sessions#new", :as => "login"
+    get "logout", :to => "devise/sessions#destroy", :as => "logout"
+    get "registrar", :to => "devise/registrations#new", :as => "register"
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

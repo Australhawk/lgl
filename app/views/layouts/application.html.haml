@@ -6,5 +6,70 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container
+    .container-fluid.navbar-inner
+      .row-fluid{:style => "margin-top: 20px"}
+        .span3
+          .pull-left
+            %a{ :href => "http://www.facebook.com/LosGorditosLoleros", :target => "_blank"}= image_tag "face.png", :height => "50", :width => "50"
+            %a{ :href => "http://www.youtube.com", :target => "_blank"}= image_tag "youtube.png", :height => "50", :width => "50"
+        .span2
+          %a.brand= image_tag "logolgl.jpg", :height => "50", :width => "90"
+          
+        .span4
+          %ul.nav.nav-pills.pull-right{:style => "margin-top: 10px"}           
+            %li 
+              %a{href: "/"} Inicio
+            %li
+              %a{href: streams_path} Streams
+            %li
+              %a{href: "#"} Música
+            %li
+              %a{href: "#"} Torneos
+            %li
+              %a{href: "#"} Youtube
+            %li
+              %a{href: "#"} Contacto
+        .span3
+          .pull-right
+            %a{ :href => "http://www.gamerdeal.tv", :target => "_blank"}= image_tag "logogamerdeal.png", :height => "50", :width => "110"
+            %a{ :href => "http://www.facebook.com/LaTiendaDeHippalus", :target => "_blank"}= image_tag "logohippalus.png", :height => "50", :width => "110"
+    
+    .container{:style => "padding-top: 20px;padding-bottom:60px;"}
+      - flash.each do |type,message|
+        %div{:class => "alert #{flash_class type}"}
+          %a.close{"data-dismiss" => "alert", :href => "#"} ×
+          = message    
+            
+      / Contenido          
       = yield
+      / Fin Contenido
+    #footer    
+      .container-fluid.navbar-inner{:style => "height:100px"}
+        .row-fluid{:style => "margin-top: 10px;"}
+          .span5.dropup
+            - if user_signed_in?
+              %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                = image_tag current_user.gravatar_url, :height => "20", :width => "20"
+                = current_user.full_name
+              %ul.dropdown-menu
+                %li 
+                  %a{:href => new_stream_path} 
+                    %i.icon-facetime-video
+                    Agregar Stream
+                  %a 
+                    %i.icon-music
+                    Musica
+                  %a
+                    %i.icon-user
+                    Contactos
+                  %a
+                    %i.icon-play-circle
+                    Youtube    
+                  %a{:href => logout_path}
+                    %i.icon-remove
+                    Cerrar sesión
+          .span2                                       
+          .span5{:style => "text-align: right"}
+            %span.label Desarrollado por e-Clay
+       
+          

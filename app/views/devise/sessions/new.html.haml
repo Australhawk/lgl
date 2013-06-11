@@ -1,16 +1,13 @@
-%h2 Sign in
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  - if devise_mapping.rememberable?
-    %div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit "Sign in"
+%h2 Iniciar Sesion
+= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {class: "form-horizontal well"}) do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :email, :label => "Correo Electronico"
+    = f.input :password, :label => "Contraseña"
+    - if devise_mapping.rememberable?
+      = f.input :remember_me, :as => :boolean, :label => "Recordarme"
+  = f.actions do
+    = f.action :submit, :label => "Iniciar Sesión", :button_html => { :disable_with => 'Iniciando...' }
+    = f.action :reset, :label => "Reiniciar"
+  
 = render "devise/shared/links"
