@@ -1,3 +1,32 @@
-// Place all the styles related to the raiz controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#index_content{
+  background-image: url('/assets/fondo.jpg');
+  background-repeat: no-repeat;
+  min-height: 460px;
+  max-width: 940px;
+}
+
+#partners center{
+  padding: 40px;
+}
+
+#media_index{
+  height: 440px;
+  width: 300px;
+  float: right;
+}
+
+#youtube{
+  height: 180px;
+  width: 280px;
+  background-color: #e6e6e6;
+  padding: 10px;
+}
+
+#twitch{
+  height: 180px;
+  width: 280px;
+  background-color: #e6e6e6;
+  padding: 10px;
+  margin-top: 40px;
+}
+
