@@ -6,34 +6,30 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    / Top Bar
     .container-fluid.navbar-inner
-      .row-fluid{:style => "margin-top: 20px"}
-        .span3
-          .pull-left
-            %a{ :href => "http://www.facebook.com/LosGorditosLoleros", :target => "_blank"}= image_tag "face.png", :height => "50", :width => "50"
-            %a{ :href => "http://www.youtube.com", :target => "_blank"}= image_tag "youtube.png", :height => "50", :width => "50"
-        .span2
-          %a.brand= image_tag "logolgl.jpg", :height => "50", :width => "90"
-          
-        .span4
-          %ul.nav.nav-pills.pull-right{:style => "margin-top: 10px"}           
-            %li 
-              %a{href: "/"} Inicio
-            %li
-              %a{href: streams_path} Streams
-            %li
-              %a{href: "#"} Música
-            %li
-              %a{href: "#"} Torneos
-            %li
-              %a{href: "#"} Youtube
-            %li
-              %a{href: "#"} Contacto
-        .span3
-          .pull-right
-            %a{ :href => "http://www.gamerdeal.tv", :target => "_blank"}= image_tag "logogamerdeal.png", :height => "50", :width => "110"
-            %a{ :href => "http://www.facebook.com/LaTiendaDeHippalus", :target => "_blank"}= image_tag "logohippalus.png", :height => "50", :width => "110"
-    
+      / Logo y Menu
+      .container
+        .row{:style => "margin-top: 20px"}
+          .span4
+            %a.brand= image_tag "logolgl.jpg", :height => "50", :width => "90"
+            
+          .span8
+            %ul.nav.nav-pills.pull-right{:style => "margin-top: 10px"}           
+              %li 
+                %a{href: "/"} Inicio
+              %li
+                %a{href: streams_path} Streams
+              %li
+                %a{href: "#"} Música
+              %li
+                %a{href: "#"} Torneos
+              %li
+                %a{href: "#"} Youtube
+              %li
+                %a{href: "#"} Contacto
+                       
+    / Mensajes
     .container{:style => "padding-top: 20px;padding-bottom:60px;"}
       - flash.each do |type,message|
         %div{:class => "alert #{flash_class type}"}
@@ -43,8 +39,10 @@
       / Contenido          
       = yield
       / Fin Contenido
+    
+    / Footer
     #footer    
-      .container-fluid.navbar-inner{:style => "height:100px"}
+      .container-fluid.navbar-inner{:style => "height:100%"}
         .row-fluid{:style => "margin-top: 10px;"}
           .span5.dropup
             - if user_signed_in?
