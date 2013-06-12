@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @tournament.name
+%p
+  %b Image:
+  = @tournament.image
+%p
+  %b Description:
+  = @tournament.description
+%p
+  %b Fixture:
+  = @tournament.fixture
+%p
+  %b Open:
+  = @tournament.open
+%p
+  %b Close:
+  = @tournament.close
+%p
+  %b Start:
+  = @tournament.start
+%p
+  %b Url:
+  = @tournament.url
+
+= link_to 'Edit', edit_tournament_path(@tournament)
+\|
+= link_to 'Back', tournaments_path

@@ -10,6 +10,17 @@ class StreamsController < ApplicationController
       format.json { render json: @streams }
     end
   end
+  
+  # GET /streams
+  # GET /streams.json
+  def admin
+    @streams = Stream.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @streams }
+    end
+  end
 
   # GET /streams/1
   # GET /streams/1.json
