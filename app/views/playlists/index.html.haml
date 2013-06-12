@@ -1,0 +1,20 @@
+%p.label.label-success Playlist
+.row-fluid
+  %ul.thumbnails
+    - @playlists.each do |playlist|
+      - if playlist.broadcast?
+        %li
+          %a.thumbnail{href: playlist.link, target: "_blank"}= holder_tag "250x250", playlist.name, "industrial"
+          
+          - if can? :manage,@playlists
+            = link_to 'Edit', edit_playlist_path(playlist)
+            = link_to 'Destroy', playlist, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - else
+        %li        
+          %a.thumbnail{href: playlist.link, target: "_blank"}= holder_tag "250x250", playlist.name, "social"
+          
+          
+          - if can? :manage,@playlists
+            = playlist.grooveshark
+            = link_to 'Edit', edit_playlist_path(playlist)
+            = link_to 'Destroy', playlist, :method => :delete, :data => { :confirm => 'Are you sure?' }            

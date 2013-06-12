@@ -12,7 +12,7 @@ gem 'holder_rails'															#HOLDER
 gem 'devise'																#LOGIN
 # gem 'kaminari'																#PAGINATION
 # gem 'factory_girl_rails'													#FIXTURES
-# gem 'cancan'																#PERMISOS
+gem 'cancan'																#PERMISOS
 # gem 'nokogiri'																#PARSER
 gem 'formtastic-bootstrap'													#FORMULARIOS
 # gem 'omniauth-facebook'														#FACEBOOK

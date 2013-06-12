@@ -1,10 +1,10 @@
 class StreamsController < ApplicationController
-  
+  load_and_authorize_resource
   # GET /streams
   # GET /streams.json
   def index
     @streams = Stream.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @streams }
@@ -14,6 +14,7 @@ class StreamsController < ApplicationController
   # GET /streams
   # GET /streams.json
   def admin
+    
     @streams = Stream.all
 
     respond_to do |format|

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612165951) do
+ActiveRecord::Schema.define(:version => 20130612193009) do
+
+  create_table "playlists", :force => true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.boolean  "broadcast"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "streams", :force => true do |t|
     t.string   "title"
@@ -26,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20130612165951) do
   create_table "tournaments", :force => true do |t|
     t.string   "name"
     t.string   "image"
-    t.string   "description"
     t.string   "fixture"
     t.date     "open"
     t.date     "close"
@@ -34,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20130612165951) do
     t.string   "url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "description"
   end
 
   create_table "users", :force => true do |t|
@@ -66,5 +75,14 @@ ActiveRecord::Schema.define(:version => 20130612165951) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end

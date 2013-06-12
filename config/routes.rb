@@ -1,4 +1,12 @@
 LGL::Application.routes.draw do
+  resources :videos
+
+
+  get "videos/index"
+
+  resources :playlists
+
+
   resources :tournaments
 
 
