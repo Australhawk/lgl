@@ -7,12 +7,13 @@
     = csrf_meta_tags
   %body
     / Top Bar
+    #fb-root
     .container-fluid.navbar-inner
       / Logo y Menu
       .container
         .row{:style => "margin-top: 20px"}
           .span4
-            %a.brand= image_tag "logolgl.jpg", :height => "50", :width => "90"
+            %a.brand{:href => root_path }= image_tag "logolgl.jpg", :height => "50", :width => "90"
             
           .span8
             %ul.nav.nav-pills.pull-right{:style => "margin-top: 10px"}           
@@ -29,19 +30,33 @@
               %li
                 %a{href: "#"} Contacto
                        
+    #social.container
+      .row{:style => "margin-top: 5px;  padding-left: 10px;"}
+        .span4
+          %a{:href => "http://www.facebook.com/LosGorditosLoleros", :target => :_blank}= image_tag "facebook_32.png"
+          %a{:href => "http://www.youtube.com/lglcomunidad", :target => :_blank }= image_tag "youtube_32.png"
+    
     / Mensajes
-    .container{:style => "padding-top: 20px;padding-bottom:60px;"}
+    #message.container{:style => "padding-top: 20px;"}
       - flash.each do |type,message|
         %div{:class => "alert #{flash_class type}"}
           %a.close{"data-dismiss" => "alert", :href => "#"} ×
-          = message    
+          = message
+            
+    .container{:style => "padding-top: 40px;padding-bottom:20px;"}
+          
             
       / Contenido          
       = yield
       / Fin Contenido
     
     / Footer
-    #footer    
+    #footer
+      %center
+        .facebook.container
+          .fb-like{"data-href" => "https://www.facebook.com/LosGorditosLoleros", "data-send" => "true", "data-show-faces" => "true", "data-width" => "450"}
+         
+      
       .container-fluid.navbar-inner{:style => "height:100%"}
         .row-fluid{:style => "margin-top: 10px;"}
           .span5.dropup
