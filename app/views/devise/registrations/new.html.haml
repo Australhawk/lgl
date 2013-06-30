@@ -10,7 +10,7 @@
     = f.input :password_confirmation, :label => "Confirmar Contraseña"
     
   = f.actions do
-    = f.action :submit, :label => "Registrarse", :button_html => { :disable_with => 'Registrando...' }
+    = f.action :submit, :label => "Registrarse", :data => { :disable_with => 'Registrando...' }
     = f.action :reset, :label => "Reiniciar"
   
 = render "devise/shared/links"

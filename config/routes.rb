@@ -21,6 +21,7 @@ LGL::Application.routes.draw do
     get "login", :to => "devise/sessions#new", :as => "login"
     get "logout", :to => "devise/sessions#destroy", :as => "logout"
     get "registrar", :to => "devise/registrations#new", :as => "register"
+    post "registrar", :to => "devise/registrarions#create", :as => "register_post"
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
