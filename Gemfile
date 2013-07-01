@@ -25,7 +25,7 @@ gem 'protected_attributes'
 # gem 'resque'																#ASYNC
 # gem 'resque_mailer'															#MAIL-DELAYER
 
-
+gem 'rails_12factor', group: :production
 
 
 group :development do
