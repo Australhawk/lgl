@@ -1,32 +1,57 @@
 #index_content{
-  background-image: url('/assets/fondo.jpg');
+  background-image: url('/assets/fondo1.jpg');
   background-repeat: no-repeat;
   min-height: 460px;
-  max-width: 940px;
+  width: 100%;
+  max-width: 1600px;
+}
+
+#social{
+  width: 90px;
+  float: left;
+  padding: 12px 0px 0px 45px;
+}
+
+#partners{
+  padding: 20px;
 }
 
 #partners center{
   padding: 40px;
 }
 
-#media_index{
-  height: 440px;
-  width: 300px;
+#partners_box{
+  width: 600px;
   float: right;
 }
 
+#partners_box img{
+padding-top: 40px;
+}
+
+#media_index{
+  height: 640px;
+  width: 400px;
+  float: right;
+  margin-top: 40px;
+}
+
 #youtube{
-  height: 180px;
-  width: 280px;
+  height: 290px;
+  width: 365px;
   background-color: #e6e6e6;
   padding: 10px;
 }
 
 #twitch{
-  height: 180px;
-  width: 280px;
+  height: 290px;
+  width: 365px;
   background-color: #e6e6e6;
   padding: 10px;
   margin-top: 40px;
+}
+
+.fb-like-box{
+  float: left;
 }
 

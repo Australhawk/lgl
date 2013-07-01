@@ -16,6 +16,10 @@
             %a.brand{:href => root_path }= image_tag "logolgl.jpg", :height => "50", :width => "90"
             
           .span8
+            #social
+              %center
+                %a{:href => "http://www.facebook.com/LosGorditosLoleros", :target => :_blank}= image_tag "facebook_32.png"
+                %a{:href => "http://www.youtube.com/lglcomunidad", :target => :_blank }= image_tag "youtube_32.png"
             %ul.nav.nav-pills.pull-right{:style => "margin-top: 10px"}           
               %li 
                 %a{href: "/"} Inicio
@@ -29,13 +33,7 @@
                 %a{href: "#"} Youtube
               %li
                 %a{href: "#"} Contacto
-                       
-    #social.container
-      .row{:style => "margin-top: 5px;  padding-left: 10px;"}
-        .span4
-          %a{:href => "http://www.facebook.com/LosGorditosLoleros", :target => :_blank}= image_tag "facebook_32.png"
-          %a{:href => "http://www.youtube.com/lglcomunidad", :target => :_blank }= image_tag "youtube_32.png"
-    
+                           
     / Mensajes
     #message.container{:style => "padding-top: 20px;"}
       - flash.each do |type,message|
@@ -43,7 +41,7 @@
           %a.close{"data-dismiss" => "alert", :href => "#"} ×
           = message
             
-    .container{:style => "padding-top: 40px;padding-bottom:20px;"}
+    .container-fluid{:style => "padding-bottom:20px;"}
           
             
       / Contenido          

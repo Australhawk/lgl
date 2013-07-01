@@ -1,18 +1,20 @@
-#index_content.container
+#index_content.container-fluid
   #media_index
     #youtube
       %img{:src => "/assets/youtube_16.png", :style => "margin-bottom: 8px"}/
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "157", :src => "http://www.youtube.com/embed/SmrH7v1Ya-k", :width => "279"}
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "260", :src => "http://www.youtube.com/embed/SmrH7v1Ya-k", :width => "365"}
     
     #twitch
       %img{:src => "/assets/twitch.png", :style => "margin-bottom: 8px"}/
-      %iframe#chat_embed{:frameborder => "0", :height => "157", :scrolling => "no", :src => "http://twitch.tv/chat/embed?channel=streamlgl&popout_chat=true", :width => "279"}
+      %iframe#chat_embed{:frameborder => "0", :height => "260", :scrolling => "no", :src => "http://twitch.tv/embed?channel=streamlgl&popout_chat=true", :width => "365"}
 
-#partners.container
-  %h1 PARTNERS
-  %center
-    %a{:href => "http://www.gamerdeal.tv", :target => :_blank }= image_tag "gamerdeal.png"
-    %a{:href => "http://www.tiendadehippalus.com/", :target => :_blank }= image_tag "tienda.png"
+#partners.container.navbar-inner
+  .fb-like-box{"data-header" => "false", "data-href" => "https://www.facebook.com/LosGorditosLoleros", "data-show-border" => "true", "data-show-faces" => "true", "data-stream" => "true", "data-width" => "292"}
+  #partners_box
+    %h1 PARTNERS
+    %center
+      %a{:href => "http://www.gamerdeal.tv", :target => :_blank }= image_tag "gamerdeal.png"
+      %a{:href => "http://www.tiendadehippalus.com/", :target => :_blank }= image_tag "tienda.png"
     
 
 
