@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @playlist.name
+%p
+  %b Link:
+  = @playlist.link
+%p
+  %b Description:
+  = @playlist.description
+%p
+  %b Broadcast:
+  = @playlist.broadcast
+
+= link_to 'Edit', edit_playlist_path(@playlist)
+\|
+= link_to 'Back', playlists_path

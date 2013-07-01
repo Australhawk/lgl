@@ -26,11 +26,11 @@
               %li
                 %a{href: streams_path} Streams
               %li
-                %a{href: "#"} Música
+                %a{href: playlists_path} Música
               %li
-                %a{href: "#"} Torneos
+                %a{href: tournaments_path} Torneos
               %li
-                %a{href: "#"} Youtube
+                %a{href: videos_path} Youtube
               %li
                 %a{href: "#"} Contacto
                            
@@ -55,7 +55,7 @@
           .fb-like{"data-href" => "https://www.facebook.com/LosGorditosLoleros", "data-send" => "true", "data-show-faces" => "true", "data-width" => "450"}
          
       
-      .container-fluid.navbar-inner{:style => "height:100%"}
+      .container-fluid.navbar-inner{:style => "height:100%;margin-top:20px"}
         .row-fluid{:style => "margin-top: 10px;"}
           .span5.dropup
             - if user_signed_in?
@@ -67,13 +67,13 @@
                   %a{:href => new_stream_path} 
                     %i.icon-facetime-video
                     Agregar Stream
-                  %a 
+                  %a{:href => new_playlist_path}
                     %i.icon-music
-                    Musica
-                  %a
+                    Agregar Musica
+                  %a{:href => new_tournament_path}
                     %i.icon-user
-                    Contactos
-                  %a
+                    Agregar Torneo
+                  %a{:href => new_video_path}
                     %i.icon-play-circle
                     Youtube    
                   %a{:href => logout_path}

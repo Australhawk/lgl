@@ -1,4 +1,5 @@
 class TournamentsController < ApplicationController
+  load_and_authorize_resource
   # GET /tournaments
   # GET /tournaments.json
   def index
