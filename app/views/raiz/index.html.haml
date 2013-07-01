@@ -1,11 +1,11 @@
 #index_content.container-fluid
   #media_index
     #youtube
-      %img{:src => "/assets/youtube_16.png", :style => "margin-bottom: 8px"}/
+      = image_tag "youtube_16.png", :style => "margin-bottom: 8px"
       %iframe{:allowfullscreen => "", :frameborder => "0", :height => "260", :src => "http://www.youtube.com/embed/SmrH7v1Ya-k", :width => "365"}
     
     #twitch
-      %img{:src => "/assets/twitch.png", :style => "margin-bottom: 8px"}/
+      = image_tag "twitch.png", :style => "margin-bottom: 8px"
       %iframe#chat_embed{:frameborder => "0", :height => "260", :scrolling => "no", :src => "http://twitch.tv/embed?channel=streamlgl&popout_chat=true", :width => "365"}
 
 #partners.container.navbar-inner
