@@ -41,12 +41,16 @@
           %a.close{"data-dismiss" => "alert", :href => "#"} ×
           = message
             
-    .container-fluid{:style => "padding-bottom:20px;"}
+    -if root_path == request.path
+      .container-fluid{:style => "padding-bottom:20px;"}
+        = yield
+    -else
+      .container{:style => "padding-bottom:20px;"}
           
             
-      / Contenido          
-      = yield
-      / Fin Contenido
+        / Contenido          
+        = yield
+        / Fin Contenido
     
     / Footer
     #footer

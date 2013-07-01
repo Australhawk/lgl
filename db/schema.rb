@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20130612193009) do
     t.string   "title"
     t.string   "image"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "account"
     t.boolean  "oficial",     default: false
   end
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20130612193009) do
     t.date     "close"
     t.date     "start"
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "description"
   end
 
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20130612193009) do
     t.integer  "failed_attempts",        default: 0
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
