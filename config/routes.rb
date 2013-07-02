@@ -1,4 +1,6 @@
 LGL::Application.routes.draw do
+  resources :contactos
+
   resources :videos
 
 

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130612193009) do
+ActiveRecord::Schema.define(version: 20130702060643) do
+
+  create_table "contactos", force: true do |t|
+    t.string   "name"
+    t.string   "correo"
+    t.text     "mensaje"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "playlists", force: true do |t|
     t.string   "name"
@@ -26,8 +34,8 @@ ActiveRecord::Schema.define(version: 20130612193009) do
     t.string   "title"
     t.string   "image"
     t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "account"
     t.boolean  "oficial",     default: false
   end
@@ -40,8 +48,8 @@ ActiveRecord::Schema.define(version: 20130612193009) do
     t.date     "close"
     t.date     "start"
     t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "description"
   end
 
@@ -67,8 +75,8 @@ ActiveRecord::Schema.define(version: 20130612193009) do
     t.integer  "failed_attempts",        default: 0
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

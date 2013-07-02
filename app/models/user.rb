@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
   validates_presence_of :profile_name
   
+  
   def full_name
     first_name + " " + last_name
   end

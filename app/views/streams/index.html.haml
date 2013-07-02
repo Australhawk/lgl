@@ -1,10 +1,16 @@
-%p.label.label-success Streams Oficiales
+%p.label.label-success Stream Oficial
 .row-fluid
   %ul.thumbnails
     - @streams.each do |stream|
       - if stream.oficial?
         %li
-          %a.thumbnail= holder_tag "200x200", stream.title, "social"
+          %a.thumbnail
+            %object#live_embed_player_flash{:bgcolor => "#000000", :data => "http://es-es.twitch.tv/widgets/live_embed_player.swf?channel=#{stream.account}", :height => "450", :type => "application/x-shockwave-flash", :width => "940"}
+              %param{:name => "allowFullScreen", :value => "true"}/
+              %param{:name => "allowScriptAccess", :value => "always"}/
+              %param{:name => "allowNetworking", :value => "all"}/
+              %param{:name => "movie", :value => "http://es-es.twitch.tv/widgets/live_embed_player.swf"}/
+              %param{:name => "flashvars", :value => "hostname=es-es.twitch.tv&channel=#{stream.account}&auto_play=true&start_volume=25"}/
 
 %p.label Otros Streams
 .row-fluid
@@ -12,5 +18,12 @@
     - @streams.each do |stream|
       - if !stream.oficial?
         %li
-          %a.thumbnail= holder_tag "200x200", stream.title, "social"
+          %a.thumbnail
+            %object#live_embed_player_flash{:bgcolor => "#000000", :data => "http://es-es.twitch.tv/widgets/live_embed_player.swf?channel=#{stream.account}", :height => "200", :type => "application/x-shockwave-flash", :width => "280"}
+              %param{:name => "allowFullScreen", :value => "true"}/
+              %param{:name => "allowScriptAccess", :value => "always"}/
+              %param{:name => "allowNetworking", :value => "all"}/
+              %param{:name => "movie", :value => "http://es-es.twitch.tv/widgets/live_embed_player.swf"}/
+              %param{:name => "flashvars", :value => "hostname=es-es.twitch.tv&channel=#{stream.account}&auto_play=false&start_volume=25"}/
+
       

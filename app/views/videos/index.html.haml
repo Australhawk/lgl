@@ -1,25 +1,18 @@
-%h1 Listing videos
+%p.label.label-success Canal Comunidad
+.row-fluid
+  %ul.thumbnails
+    %li
+      %a.thumbnail
+        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "200", :src => "//www.youtube.com/embed/SmrH7v1Ya-k", :width => "280"}
+        
 
-%table
-  %tr
-    %th Name
-    %th Url
-    %th Description
-    %th Image
-    %th
-    %th
-    %th
-
-  - @videos.each do |video|
-    %tr
-      %td= video.name
-      %td= video.url
-      %td= video.description
-      %td= video.image
-      %td= link_to 'Show', video
-      %td= link_to 'Edit', edit_video_path(video)
-      %td= link_to 'Destroy', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Video', new_video_path
+%p.label.label-success Videos Youtube
+.row-fluid
+  %ul.thumbnails
+    - @videos.each do |video|
+    
+      %li
+        %a.thumbnail
+          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "200", :src => "//www.youtube.com/embed/#{video.youtubeid}", :width => "280"}
+          
+          

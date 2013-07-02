@@ -1,5 +1,5 @@
 %p.label.label-success Playlist
-.row-fluid
+.row
   %ul.thumbnails
     - @playlists.each do |playlist|
       - if playlist.broadcast?
@@ -11,9 +11,12 @@
             = link_to 'Destroy', playlist, :method => :delete, :data => { :confirm => 'Are you sure?' }
       - else
         %li        
-          %a.thumbnail{href: playlist.link, target: "_blank"}= holder_tag "250x250", playlist.name, "social"
-          
-          
+          %a.thumbnail
+            %object{:data => "http://grooveshark.com/widget.swf", :height => "250", :type => "application/x-shockwave-flash", :width => "250"}
+              %param{:name => "wmode", :value => "window"}/
+              %param{:name => "allowScriptAccess", :value => "always"}/
+              %param{:name => "flashvars", :value => "hostname=grooveshark.com&playlistID=#{playlist.grooveshark}&p=0&bbg=000000&bth=000000&pfg=000000&lfg=000000&bt=FFFFFF&pbg=FFFFFF&pfgh=FFFFFF&si=FFFFFF&lbg=FFFFFF&lfgh=FFFFFF&sb=FFFFFF&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666"}/
+                    
           - if can? :manage,@playlists
             
             = link_to 'Edit', edit_playlist_path(playlist)
