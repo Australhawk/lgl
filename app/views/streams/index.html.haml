@@ -12,7 +12,9 @@
               %param{:name => "movie", :value => "http://es-es.twitch.tv/widgets/live_embed_player.swf"}/
               %param{:name => "flashvars", :value => "hostname=es-es.twitch.tv&channel=#{stream.account}&auto_play=true&start_volume=25"}/
   -if @match && @match.mostrar?
+    %h3{:style => "text-align:center"} Haz tu pronóstico
     %iframe.img-polaroid{:frameborder => "0", :scrolling => "no", :src => "https://www.gamerdeal.tv/bet/match/#{@match.match_id}", :style => "border:none; width:610px; height:136px; margin-left: 180px"}
+
 %p.label Otros Streams
 .row-fluid
   %ul.thumbnails

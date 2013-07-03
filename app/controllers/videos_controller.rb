@@ -3,6 +3,8 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
+    @client = YouTubeIt::Client.new(:dev_key => "AI39si4ZqiuEN6uMhF1q4uXuXx6FNgqTUUeJplepVXfy33rpYhWbZs0L6GD39_kdj4pv5XbqP-f9M1P9_NQ6ZExfQ-j24jJ9yg")
+    @caca = @client.videos_by(:user => 'lglcomunidad')
     @videos = Video.all
 
     respond_to do |format|

@@ -1,29 +1,23 @@
 %h1 Torneos
 
 %table.table.table-borderer
-  %tr
-    %th Name
-  %tr
-    %th Image
-  %tr
-    %th Description
-  %tr
-    %th Fixture
-  %tr
-    %th Url
-
   - @tournaments.each do |tournament|
     %tr
+      %th Name
       %td= tournament.name
-      %td= tournament.image
+    %tr
+      %th Image
+      %td{:style => "max-width:650"}= image_tag(tournament.image)
+    %tr
+      %th Description
       %td= tournament.description
+    %tr
+      %th Fixture
       %td= tournament.fixture
-      %td= tournament.open
-      %td= tournament.close
-      %td= tournament.start
-      %td= tournament.url
-      %td= link_to 'Show', tournament
-      %td= link_to 'Edit', edit_tournament_path(tournament)
+    %tr
+      %th Url
+      %td= link_to tournament.url, tournament.url, :target => "_blank"
+      
       %td= link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br

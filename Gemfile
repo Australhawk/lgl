@@ -5,7 +5,8 @@ gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'youtube_it'                          #youtube
+gem 'turbolinks'                             #TURBOLINK
 gem 'haml-rails'															#HAML
 gem 'holder_rails'															#HOLDER
 # gem 'carrierwave'															#UPLOAD
