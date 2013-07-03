@@ -9,12 +9,12 @@
       %iframe#chat_embed{:frameborder => "0", :height => "260", :scrolling => "no", :src => "http://twitch.tv/embed?channel=streamlgl&popout_chat=true", :width => "365"}
 
 #partners.container.navbar-inner
-  .fb-like-box{"data-header" => "false", "data-href" => "https://www.facebook.com/LosGorditosLoleros", "data-show-border" => "true", "data-show-faces" => "true", "data-stream" => "true", "data-width" => "292"}
+  .fb-like-box{"data-header" => "false", "data-href" => "https://www.facebook.com/LosGorditosLoleros", "data-show-border" => "true", "data-show-faces" => "true", "data-stream" => "true", "data-width" => "452"}
   #partners_box
-    %h1 PARTNERS
+    %h1{:style => "text-align: center"} PARTNERS
     %center
-      %a{:href => "http://www.gamerdeal.tv", :target => :_blank }= image_tag "gamerdeal.png"
-      %a{:href => "http://www.tiendadehippalus.com/", :target => :_blank }= image_tag "tienda.png"
+      %a{:href => "http://www.gamerdeal.tv", :target => :_blank}= image_tag "gamerdeal.png", width: "300"
+      %a{:href => "http://www.tiendadehippalus.com/", :target => :_blank }= image_tag "tienda.png", width: "300"
     
 
 

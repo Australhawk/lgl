@@ -10,7 +10,8 @@
             = link_to 'Edit', edit_playlist_path(playlist)
             = link_to 'Destroy', playlist, :method => :delete, :data => { :confirm => 'Are you sure?' }
       - else
-        %li        
+        %li
+          %h4= playlist.name
           %a.thumbnail
             %object{:data => "http://grooveshark.com/widget.swf", :height => "250", :type => "application/x-shockwave-flash", :width => "250"}
               %param{:name => "wmode", :value => "window"}/
