@@ -15,7 +15,9 @@ LGL::Application.routes.draw do
   devise_for :users
 
   resources :streams
-
+  
+  get "modulogd", :to => "streams#match", :as => "modulogd"
+  post "addmodulogd", :to => "streams#addmatch", :as => "modulogds"
 
   get "raiz/index"
   root :to => "raiz#index"
