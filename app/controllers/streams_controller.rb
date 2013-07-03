@@ -3,6 +3,7 @@ class StreamsController < ApplicationController
   # GET /streams
   # GET /streams.json
   def index
+    @match = Modulogd.last;
     @streams = Stream.all
     
     respond_to do |format|
@@ -10,7 +11,20 @@ class StreamsController < ApplicationController
       format.json { render json: @streams }
     end
   end
-  
+  def match
+    @match = Modulogd.new
+    authorize! :manage, @matchs
+  end
+  def addmatch
+    @match = Modulogd.new(params[:modulogd])
+    authorize! :manage, @match
+    if @match.save
+      redirect_to modulogd_path, notice: "Match Agregado Correctamente"
+    else
+      render action: "match"
+    end
+    
+  end
   # GET /streams
   # GET /streams.json
   def admin

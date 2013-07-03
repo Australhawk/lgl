@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130702060643) do
+ActiveRecord::Schema.define(version: 20130703042942) do
 
   create_table "contactos", force: true do |t|
     t.string   "name"
     t.string   "correo"
     t.text     "mensaje"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "modulogds", force: true do |t|
+    t.integer  "match_id"
+    t.boolean  "mostrar"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
