@@ -1,24 +1,24 @@
 %h1 Torneos
-
-%table.table.table-borderer
-  - @tournaments.each do |tournament|
-    %tr
-      %th Name
-      %td= tournament.name
-    %tr
-      %th Image
-      %td{:style => "max-width:650"}= image_tag(tournament.image)
-    %tr
-      %th Description
-      %td= tournament.description
-    %tr
-      %th Fixture
-      %td= tournament.fixture
-    %tr
-      %th Url
-      %td= link_to tournament.url, tournament.url, :target => "_blank"
-      
-      %td= link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.bs-docs-example
+  %table.table.table-borderer
+    - @tournaments.each do |tournament|
+      %tr
+        %th Name
+        %td= tournament.name
+      %tr
+        %th Image
+        %td{:style => "max-width:650"}= image_tag(tournament.image)
+      %tr
+        %th Description
+        %td= tournament.description
+      %tr
+        %th Fixture
+        %td= tournament.fixture
+      %tr
+        %th Url
+        %td= link_to tournament.url, tournament.url, :target => "_blank"
+        
+        %td= link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

@@ -1,5 +1,8 @@
-%h1 New contacto
-
-= render 'form'
+%h2 ¡Contáctate con Los Gorditos Loleros!
+.row
+  .span6
+    = render 'form'
+  .span6
+    = image_tag "teemo.jpg", width: "300", style: "margin: 100px"
 
 = link_to 'Back', contactos_path
