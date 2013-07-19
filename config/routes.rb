@@ -3,14 +3,11 @@ LGL::Application.routes.draw do
 
   resources :videos
 
-
   get "videos/index"
 
   resources :playlists
 
-
   resources :tournaments
-
 
   devise_for :users
 
@@ -18,6 +15,8 @@ LGL::Application.routes.draw do
   
   get "modulogd", :to => "streams#match", :as => "modulogd"
   post "addmodulogd", :to => "streams#addmatch", :as => "modulogds"
+
+  get "teams", :to => "raiz#teams", :as=> "teams"
 
   get "raiz/index"
   root :to => "raiz#index"
