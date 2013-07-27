@@ -16,3 +16,6 @@
 Gemfile.lock
 db/development.sqlite3
 db/schema.rb
+
+# Ignore application configuration
+/config/application.yml

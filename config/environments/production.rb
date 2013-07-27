@@ -74,7 +74,15 @@ LGL::Application.configure do
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: "mail.gamerdeal.tv",
+      port: 25,
+      authentication: "plain",
+      user_name: "no-reply@gamerdeal.tv",
+      password: ENV['MANAGER_PASSWORD'],
+      enable_starttls_auto: false
+  }
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
